@@ -1,6 +1,6 @@
 # Atheme
 
-The purpose of this gem is to interface with the [Atheme IRC Services](http://www.atheme.net) XMLRPC interface.
+A ruby way to access the [Atheme IRC Services](http://www.atheme.net) XMLRPC interface.
 
 ## Installation
 

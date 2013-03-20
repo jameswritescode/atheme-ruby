@@ -1,3 +1,4 @@
+require 'xmlrpc/client'
 require 'atheme/version'
 
 module Atheme
