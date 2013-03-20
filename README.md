@@ -1,4 +1,4 @@
-# Atheme
+# Atheme Ruby
 
 A ruby way to access the [Atheme IRC Services](http://www.atheme.net) XMLRPC interface.
 
@@ -18,6 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
+### Requirements
+
+You need to be using [Atheme IRC Services](http://www.atheme.net) with httpd and XMLRPC enabled.
+
 ### Configuration
 
 ```ruby
@@ -26,6 +30,27 @@ Atheme.configure do |config|
   config.port = 9876
 end
 ```
+
+### Authentication
+
+```ruby
+cookie = Atheme.login('nickname', 'password') # Returns an authcookie
+
+Atheme.set_user(cookie, 'nickname') # Sets the users info for commands
+```
+
+### Services commands
+
+```ruby
+Atheme::ChanServ.info '#channel'
+Atheme::NickServ.set 'email', 'james@example.com'
+```
+
+Any command can be used that the user has access to use.
+
+Command format: `Atheme::ServiceName.command 'param', 'param', ...`
+
+To see services supported [go here](https://github.com/zaphyous/atheme-ruby/tree/develop/lib/atheme/services).
 
 ## Contributing
 
