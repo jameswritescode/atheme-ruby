@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configuration
+
+```ruby
+Atheme.configure do |config|
+  config.url = 'http://example.com'
+  config.port = 9876
+end
+```
 
 ## Contributing
 

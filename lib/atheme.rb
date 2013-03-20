@@ -1,6 +1,7 @@
 require 'xmlrpc/client'
 require 'atheme/version'
+require 'atheme/configuration'
 
 module Atheme
-  # Your code goes here...
+  extend Configuration
 end
