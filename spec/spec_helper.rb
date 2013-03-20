@@ -15,6 +15,12 @@ def configure_atheme
   end
 end
 
+def authenticate
+  cookie = Atheme.login(atheme_config['nick'], atheme_config['password'])
+
+  Atheme.set_user(cookie, atheme_config['nick'], atheme_config['ip'])
+end
+
 RSpec.configure do |config|
   config.before(:each) { configure_atheme }
 end
