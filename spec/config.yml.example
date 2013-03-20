@@ -7,4 +7,3 @@ nick: a_nick_that_exists
 password: the_nicks_password
 ip: 127.0.0.1
 
-channel: a_channel_that_exists

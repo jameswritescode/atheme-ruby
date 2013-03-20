@@ -36,7 +36,7 @@ end
 ```ruby
 cookie = Atheme.login('nickname', 'password') # Returns an authcookie
 
-Atheme.set_user(cookie, 'nickname') # Sets the users info for commands
+Atheme.set_user(cookie, 'nickname', 'ip.add.re.ss') # Sets the users info for commands
 ```
 
 ### Services commands
