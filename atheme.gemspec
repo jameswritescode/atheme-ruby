@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Atheme::VERSION
   spec.authors       = ['James Newton', 'Robert Babcock']
   spec.email         = ['james@Zaphyous.com', 'robert@Zaphyous.com']
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{A ruby wrapper around the Atheme IRC Services XMLRPC interface}
+  spec.summary       = %q{atheme-ruby is an easy way to integrate your ruby application with the Atheme IRC Services XMLRPC interface}
   spec.homepage      = 'https://github.com/zaphyous/atheme'
   spec.license       = 'MIT'
 
@@ -21,4 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'guard-rspec'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rb-fsevent'
 end
