@@ -17,7 +17,7 @@ module Atheme
   extend Authenticate
 
   def self.server
-    XMLRPC::Client.new2("#{Atheme.url}:#{Atheme.port}/xmlrpc")
+    XMLRPC::Client.new2("#{Atheme.protocol}://#{Atheme.hostname}:#{Atheme.port}/xmlrpc")
   end
 
   def self.call(*args)
