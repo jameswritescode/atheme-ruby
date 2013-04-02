@@ -11,7 +11,8 @@ end
 def configure_atheme
   Atheme.configure do |config|
     config.port = atheme_config['port']
-    config.url = atheme_config['url']
+    config.hostname = atheme_config['hostname']
+    config.protocol = atheme_config['protocol']
   end
 end
 

@@ -1,15 +1,9 @@
 module Atheme::Configuration
-  VALID_CONFIG_OPTIONS = [:url, :port].freeze
-
-  attr_accessor *VALID_CONFIG_OPTIONS
+  attr_accessor :hostname, :port, :protocol
 
   def configure
-    yield self
-  end
+    self.protocol ||= 'http'
 
-  def options
-    VALID_CONFIG_OPTIONS.inject({}) do |option, key|
-      option.merge!(key => send(key))
-    end
+    yield self
   end
 end

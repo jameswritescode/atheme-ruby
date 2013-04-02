@@ -1,7 +1,8 @@
 # Change this to your testing services xmlrpc information
 
-url: http://example.com
+hostname: example.com
 port: 1234
+protocol: http
 
 nick: a_nick_that_exists
 password: the_nicks_password
