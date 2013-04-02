@@ -4,6 +4,7 @@ end
 
 require 'xmlrpc/client'
 require 'atheme/version'
+require 'atheme/errors'
 require 'atheme/configuration'
 require 'atheme/authenticate'
 require 'atheme/service'
