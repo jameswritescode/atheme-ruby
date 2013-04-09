@@ -10,4 +10,16 @@ describe 'Atheme::Service' do
 
     expect(Atheme::ChanServ.help).to be_true
   end
+
+  it 'should error when an invalid services command is used' do
+    expect{ Atheme::ChanServ.bad_method }.to raise_error XMLRPC::FaultException
+  end
+
+  it 'should have raw xmlrpc output in to_s' do
+    expect(Atheme::ChanServ.help.to_s).to include('***** ChanServ Help *****')
+  end
+
+  it 'should store the command used' do
+    expect(Atheme::ChanServ.help.instance_eval('@command')).to eql :help
+  end
 end
