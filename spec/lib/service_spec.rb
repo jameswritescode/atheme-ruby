@@ -15,8 +15,8 @@ describe 'Atheme::Service' do
     expect{ Atheme::ChanServ.bad_method }.to raise_error XMLRPC::FaultException
   end
 
-  it 'should have raw xmlrpc output in to_s' do
-    expect(Atheme::ChanServ.help.to_s).to include('***** ChanServ Help *****')
+  it 'should have raw xmlrpc output in to_raw' do
+    expect(Atheme::ChanServ.help.to_raw).to include('***** ChanServ Help *****')
   end
 
   it 'should store the command used' do
