@@ -9,7 +9,7 @@ module Atheme::Parser::ChanServ
     end
 
     def registered
-      Date.parse(parse(/Registered\s+:\s+(\w+ [0-9]{2} [0-9(:?)]+ [0-9]{4})/, 1))
+      Date.parse(parse(/Registered\s+:\s+(\w+ [0-9]{2} [0-9(:?)]+ [0-9]{4})/, 1)).to_time
     end
   end
 end

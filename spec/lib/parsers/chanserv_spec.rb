@@ -15,9 +15,9 @@ describe Atheme::Parser::ChanServ do
     end
 
     it 'should have a registered date' do
-      info.stub(:registered).and_return(Date.today)
+      info.stub(:registered).and_return(Date.today.to_time)
 
-      expect(info.registered).to eql Date.today
+      expect(info.registered).to eql Date.today.to_time
     end
   end
 end
