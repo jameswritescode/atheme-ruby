@@ -19,10 +19,6 @@ describe 'Atheme::Service' do
     expect(Atheme::ChanServ.help.to_raw).to include('***** ChanServ Help *****')
   end
 
-  it 'should store the command used' do
-    expect(Atheme::ChanServ.help.instance_eval('@command')).to eql :help
-  end
-
   it 'should raise an error when no user is set' do
     Atheme.user = nil
 

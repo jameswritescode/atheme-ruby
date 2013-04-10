@@ -3,8 +3,7 @@ class Atheme::Service
 
   attr_reader :to_raw
 
-  def initialize(command, output)
-    @command = command
+  def initialize(output)
     @to_raw = output
   end
 
@@ -12,19 +11,21 @@ class Atheme::Service
     Atheme::SERVICES << klass.name.gsub('Atheme::', '')
   end
 
-  def self.create_service_object(method, atheme_data)
+  def self.create_service_object(method, service, atheme_data)
     begin
-      self.new(method, atheme_data).extend(Atheme.constantize("Atheme::Parser::ChanServ::#{method.capitalize}"))
+      self.new(atheme_data).extend(Atheme.constantize("Atheme::Parser::#{service}::#{method.capitalize}"))
     rescue
-      self.new(method, atheme_data)
+      self.new(atheme_data)
     end
   end
 
   def self.method_missing(method, *args, &block)
     raise Atheme::Error::NoUserSet, 'No user has been set' if Atheme.user.nil?
 
-    self.create_service_object(method, Atheme.call('atheme.command',
+    service = self.name.gsub('Atheme::', '')
+
+    self.create_service_object(method, service, Atheme.call('atheme.command',
       Atheme.user.cookie, Atheme.user.username, Atheme.user.ip,
-      self.name.gsub('Atheme::', ''), method, *args))
+      service, method, *args))
   end
 end
