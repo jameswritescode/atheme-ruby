@@ -21,7 +21,7 @@ class Atheme::Service
   end
 
   def self.method_missing(method, *args, &block)
-    raise Atheme::NoUserSetError, 'No user has been set' if Atheme.user.nil?
+    raise Atheme::Error::NoUserSet, 'No user has been set' if Atheme.user.nil?
 
     self.create_service_object(method, Atheme.call('atheme.command',
       Atheme.user.cookie, Atheme.user.username, Atheme.user.ip,

@@ -22,4 +22,10 @@ describe 'Atheme::Service' do
   it 'should store the command used' do
     expect(Atheme::ChanServ.help.instance_eval('@command')).to eql :help
   end
+
+  it 'should raise an error when no user is set' do
+    Atheme.user = nil
+
+    expect { Atheme::ChanServ.help }.to raise_error Atheme::Error::NoUserSet
+  end
 end

@@ -1,4 +1,4 @@
-module Atheme
-  class NoUserSetError < StandardError
+module Atheme::Error
+  class NoUserSet < StandardError
   end
 end
