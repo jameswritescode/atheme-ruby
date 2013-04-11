@@ -22,6 +22,6 @@ describe 'Atheme::Service' do
   it 'should raise an error when no user is set' do
     Atheme.user = nil
 
-    expect { Atheme::ChanServ.help }.to raise_error Atheme::Error::NoUserSet
+    expect { Atheme::ChanServ.help }.to raise_error Atheme::Error::InvalidUser
   end
 end

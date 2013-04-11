@@ -20,7 +20,7 @@ class Atheme::Service
   end
 
   def self.method_missing(method, *args, &block)
-    raise Atheme::Error::NoUserSet, 'No user has been set' if Atheme.user.nil?
+    raise Atheme::Error::InvalidUser, 'No user has been set' if Atheme.user.nil?
 
     service = self.name.gsub('Atheme::', '')
 
