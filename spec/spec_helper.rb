@@ -9,11 +9,7 @@ def atheme_config
 end
 
 def configure_atheme
-  Atheme.configure do |config|
-    config.port = atheme_config['port']
-    config.hostname = atheme_config['hostname']
-    config.protocol = atheme_config['protocol']
-  end
+  Atheme.configure port: atheme_config['port'], hostname: atheme_config['hostname'], protocol: atheme_config['protocol']
 end
 
 def authenticate

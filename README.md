@@ -27,10 +27,7 @@ You need to be using [Atheme IRC Services](http://www.atheme.net) with httpd and
 ### Configuration
 
 ```ruby
-Atheme.configure do |config|
-  config.hostname = 'example.com'
-  config.port = 9876
-end
+Atheme.configure hostname: 'example.com', port: 1234, protocol: 'http'
 ```
 
 Optional: `protocol` (default http)

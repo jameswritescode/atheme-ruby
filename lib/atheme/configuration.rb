@@ -1,9 +1,11 @@
 module Atheme::Configuration
-  attr_accessor :hostname, :port, :protocol
+  def configure(opts = {})
+    opts[:protocol] ||= 'http'
 
-  def configure
-    self.protocol ||= 'http'
+    @options = opts
+  end
 
-    yield self
+  def options
+    Atheme::ObjectifiedHash.new(@options)
   end
 end

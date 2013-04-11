@@ -26,7 +26,7 @@ module Atheme
   end
 
   def self.server
-    XMLRPC::Client.new2("#{Atheme.protocol}://#{Atheme.hostname}:#{Atheme.port}/xmlrpc")
+    XMLRPC::Client.new2("#{Atheme.options.protocol}://#{Atheme.options.hostname}:#{Atheme.options.port}/xmlrpc")
   end
 
   def self.call(*args)
