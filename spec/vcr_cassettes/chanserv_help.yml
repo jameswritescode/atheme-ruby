@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:1234/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>atheme.command</methodName><params><param><value><string>qiyrmryiqqdrqqtswqnk</string></value></param><param><value><string>username</string></value></param><param><value><string>127.0.0.1</string></value></param><param><value><string>ChanServ</string></value></param><param><value><string>help</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '386'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Atheme/7.0.5
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '2460'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\"?>\r\n<methodResponse>\r\n<params>\r\n <param>\r\n
+        \ <value>\r\n   <string>***** ChanServ Help *****\nChanServ gives normal users
+        the ability to maintain controlof a channel, without the need of a bot. Channel
+        takeovers arevirtually impossible when a channel is registered with ChanServ.Registration
+        is a quick and painless process. Once registered,the founder can maintain
+        complete and total control over the channel.\nPlease note that channels will
+        expire after 30 days of inactivity,or if there are no eligible channel successors.Activity
+        is defined as a user with one of +FORforsv being on the channel.\nSuccessors
+        are primarily those who have the +R flagset on their account in the channel,
+        although otherpeople may be chosen depending on their accesslevel and activity.\n
+        \nCommands can also be given on channel by prefixing one of '.'and omitting
+        the channel name. These are called &quot;fantasy&quot;commands and can also
+        be disabled on a per-channel basis.\n \nFor more information on a command,
+        type:\n/msg ChanServ help &lt;command&gt;\nFor a verbose listing of all commands,
+        type:\n/msg ChanServ help commands\n \nThe following commands are available:\nCLOSE
+        \          Closes a channel.\nFDROP           Forces dropping of a channel
+        registration.\nFFLAGS          Forces a flags change on a channel.\nFLAGS
+        \          Manipulates specific permissions on a channel.\nFTRANSFER       Forces
+        foundership transfer of a channel.\nINVITE          Invites you to a channel.\nOP
+        \             Gives channel ops to a user.\nRECOVER         Regain control
+        of your channel.\nREGISTER        Registers a channel.\nSET             Sets
+        various control flags.\nUNBAN           Removes a ban on a channel.\n \nOther
+        commands: ACCESS, ACTIVATE, AKICK, BADWORDS, BAN, \n                CALC,
+        CLEAR, CLONE, COUNT, DEOP, DEVOICE, \n                DF, DOWN, DROP, EIGHTBALL,
+        FREGISTER, GETKEY, \n                HELP, HOLD, INFO, KICK, KICKBAN, LIST,
+        LOTTERY, \n                MARK, NAMEGEN, NWOD, PING, QUIET, REJECT, \n                ROLE,
+        ROLL, ROULETTE, RPS, STATUS, SYNC, \n                TAXONOMY, TEMPLATE, TOPIC,
+        TOPICAPPEND, \n                TOPICPREPEND, UNQUIET, UP, USERINFO, VOICE,
+        \n                WAITING, WHY, WOD\n***** End of Help *****\nIf you're having
+        trouble or you need some additional help, you may want to join the help channel
+        #help or visit the help webpage http://www.stack.nl/~jilles/irc/atheme-help/</string>\r\n
+        \ </value>\r\n </param>\r\n</params>\r\n</methodResponse>"
+    http_version: 
+  recorded_at: Thu, 11 Apr 2013 07:08:42 GMT
+recorded_with: VCR 2.4.0

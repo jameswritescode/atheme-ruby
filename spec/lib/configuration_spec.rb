@@ -2,15 +2,15 @@ require 'spec_helper'
 
 describe Atheme::Configuration do
   it 'should have a port' do
-    expect(Atheme.options.port).to eql atheme_config['port']
+    expect(Atheme.options.port).to eql 1234
   end
 
   it 'should have a url' do
-    expect(Atheme.options.hostname).to eql atheme_config['hostname']
+    expect(Atheme.options.hostname).to eql 'localhost'
   end
 
   it 'should have a protocol' do
-    expect(Atheme.options.protocol).to eql atheme_config['protocol']
+    expect(Atheme.options.protocol).to eql 'http'
   end
 
   it 'should raise an error if configuration is missing required options' do

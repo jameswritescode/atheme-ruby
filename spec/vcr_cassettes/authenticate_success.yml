@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:1234/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>atheme.login</methodName><params><param><value><string>username</string></value></param><param><value><string>password</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '212'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Atheme/7.0.5
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '165'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\"?>\r\n<methodResponse>\r\n<params>\r\n <param>\r\n
+        \ <value>\r\n   <string>qiyrmryiqqdrqqtswqnk</string>\r\n  </value>\r\n </param>\r\n</params>\r\n</methodResponse>"
+    http_version: 
+  recorded_at: Thu, 11 Apr 2013 07:08:42 GMT
+recorded_with: VCR 2.4.0

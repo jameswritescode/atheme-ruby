@@ -4,20 +4,22 @@ describe Atheme::Parser::ChanServ do
   context '.info' do
     before { authenticate }
 
-    let(:info) { Atheme::ChanServ.info atheme_config['channel'] }
+    let(:info) do
+      VCR.use_cassette('chanserv_info') do
+        Atheme::ChanServ.info atheme_config['channel']
+      end
+    end
 
     it 'has a founder' do
-      expect(info.founder).to eql 'newton'
+      expect(info.founder).to eql atheme_config['nick']
     end
 
     it 'has a successor' do
-      expect(info.successor).to eql 'robert'
+      expect(info.successor).to eql 'username_'
     end
 
     it 'should have a registered date' do
-      info.stub(:registered).and_return(Date.today.to_time)
-
-      expect(info.registered).to eql Date.today.to_time
+      expect(info.registered).to eql Date.parse('2013-02-08').to_time
     end
   end
 end

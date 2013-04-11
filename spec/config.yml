@@ -1,0 +1,9 @@
+hostname: localhost
+port: 1234
+protocol: http
+
+nick: username
+password: password
+ip: 127.0.0.1
+
+channel: '#channel'

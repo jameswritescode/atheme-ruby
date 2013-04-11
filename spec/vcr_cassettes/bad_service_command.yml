@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:1234/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>atheme.command</methodName><params><param><value><string>qiyrmryiqqdrqqtswqnk</string></value></param><param><value><string>username</string></value></param><param><value><string>127.0.0.1</string></value></param><param><value><string>ChanServ</string></value></param><param><value><string>bad_method</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '392'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Atheme/7.0.5
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '341'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\"?>\r\n<methodResponse>\r\n <fault>\r\n  <value>\r\n
+        \  <struct>\r\n    <member>\r\n     <name>faultCode</name>\r\n     <value><int>3</int></value>\r\n
+        \   </member>\r\n    <member>\r\n     <name>faultString</name>\r\n     <value><string>Invalid
+        command name.</string></value>\r\n    </member>\r\n   </struct>\r\n  </value>\r\n
+        </fault>\r\n</methodResponse>"
+    http_version: 
+  recorded_at: Thu, 11 Apr 2013 07:11:24 GMT
+recorded_with: VCR 2.4.0

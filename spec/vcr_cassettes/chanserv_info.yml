@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:1234/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>atheme.command</methodName><params><param><value><string>qiyrmryiqqdrqqtswqnk</string></value></param><param><value><string>username</string></value></param><param><value><string>127.0.0.1</string></value></param><param><value><string>ChanServ</string></value></param><param><value><string>info</string></value></param><param><value><string>#channel</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '442'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Atheme/7.0.5
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '476'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\"?>\r\n<methodResponse>\r\n<params>\r\n <param>\r\n
+        \ <value>\r\n   <string>Information on #channel:\nFounder    : username\nSuccessor
+        \ : username_\nRegistered : Feb 08 15:09:32 2013 (8 weeks, 5 days, 08:03:27 ago)\nMode
+        lock  : +nstr\nURL        : http://example.com\nEmail      : username@example.com\nFlags
+        \     : VERBOSE RESTRICTED KEEPTOPIC TOPICLOCK GUARD FANTASY\nPrefix     :
+        . (default)\n*** End of Info ***</string>\r\n  </value>\r\n </param>\r\n</params>\r\n</methodResponse>"
+    http_version: 
+  recorded_at: Thu, 11 Apr 2013 07:14:07 GMT
+recorded_with: VCR 2.4.0

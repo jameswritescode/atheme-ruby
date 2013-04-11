@@ -8,15 +8,21 @@ describe 'Atheme::Service' do
   it 'should be able to query services' do
     authenticate
 
-    expect(Atheme::ChanServ.help).to be_true
+    VCR.use_cassette('chanserv_help') do
+      expect(Atheme::ChanServ.help).to be_true
+    end
   end
 
   it 'should error when an invalid services command is used' do
-    expect{ Atheme::ChanServ.bad_method }.to raise_error XMLRPC::FaultException
+    VCR.use_cassette('bad_service_command') do
+      expect{ Atheme::ChanServ.bad_method }.to raise_error XMLRPC::FaultException
+    end
   end
 
   it 'should have raw xmlrpc output in to_raw' do
-    expect(Atheme::ChanServ.help.to_raw).to include('***** ChanServ Help *****')
+    VCR.use_cassette('chanserv_help') do
+      expect(Atheme::ChanServ.help.to_raw).to include('***** ChanServ Help *****')
+    end
   end
 
   it 'should raise an error when no user is set' do
