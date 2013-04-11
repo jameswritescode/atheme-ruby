@@ -5,7 +5,7 @@ module Atheme::Parser::ChanServ
     end
 
     def successor
-      parse(/Successor(\s+):(\s+)(\w+)/, 3)
+      to_raw.match(/Successor\s+:\s+\(none\)/) ? nil : parse(/Successor(\s+):(\s+)(\w+)/, 3)
     end
 
     def registered
