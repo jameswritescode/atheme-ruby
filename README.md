@@ -64,6 +64,10 @@ Each command will return an object of the `Atheme::Service` that is used. All wi
 
 Some commands will return an object with additional methods on them depending if a parser exists for that command. [Parsers can be seen here](https://github.com/zaphyous/atheme-ruby/tree/develop/lib/atheme/parsers)
 
+## Testing
+
+In order to be able to generate VCR cassettes properly when testing (minus those that already exist!) you must run a local IRC server with Atheme with httpd and XMLRPC enabled (listening on `localhost:1234`).
+
 ## Contributing
 
 1. Fork it
