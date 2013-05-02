@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['james@Zaphyous.com', 'robert@Zaphyous.com']
   spec.description   = %q{A ruby wrapper around the Atheme IRC Services XMLRPC interface}
   spec.summary       = %q{atheme-ruby is an easy way to integrate your ruby application with the Atheme IRC Services XMLRPC interface}
-  spec.homepage      = 'https://github.com/zaphyous/atheme'
+  spec.homepage      = 'https://github.com/zaphyous/atheme-ruby'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

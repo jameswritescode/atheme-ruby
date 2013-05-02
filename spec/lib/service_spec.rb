@@ -21,7 +21,7 @@ describe 'Atheme::Service' do
 
   it 'should have raw xmlrpc output in to_raw' do
     VCR.use_cassette('chanserv_help') do
-      expect(Atheme::ChanServ.help.to_raw).to include('***** ChanServ Help *****')
+      expect(Atheme::ChanServ.help.raw_services_output).to include('***** ChanServ Help *****')
     end
   end
 

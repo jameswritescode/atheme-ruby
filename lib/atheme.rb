@@ -1,5 +1,6 @@
 module Atheme
   SERVICES = []
+  PARSERS  = {}
 end
 
 require 'xmlrpc/client'
@@ -8,7 +9,9 @@ require 'atheme/errors'
 require 'atheme/configuration'
 require 'atheme/authenticate'
 require 'atheme/objectified_hash'
+require 'atheme/support'
 require 'atheme/parser'
+require 'atheme/parser_helper'
 
 Dir[File.expand_path('../atheme/parsers/*.rb', __FILE__)].each { |file| require file }
 
@@ -35,18 +38,5 @@ module Atheme
 
   def self.set_user(cookie, username, ip)
     self.user = Atheme::ObjectifiedHash.new({ cookie: cookie, username: username, ip: ip })
-  end
-
-  def self.constantize(camel_cased_word)
-    names = camel_cased_word.split('::')
-    names.shift if names.empty? || names.first.empty?
-
-    constant = Object
-
-    names.each do |name|
-        constant = constant.const_defined?(name) ? constant.const_get(name) : constant.const_missing(name)
-    end
-
-    constant
   end
 end

@@ -1,10 +1,8 @@
 class Atheme::Service
-  include Atheme::Parser
-
-  attr_reader :to_raw
+  attr_reader :raw_services_output
 
   def initialize(output)
-    @to_raw = output
+    @raw_services_output = output
   end
 
   def self.inherited(klass)
@@ -12,9 +10,11 @@ class Atheme::Service
   end
 
   def self.create_service_object(method, service, atheme_data)
-    begin
-      self.new(atheme_data).extend(Atheme.constantize("Atheme::Parser::#{service}::#{method.capitalize}"))
-    rescue
+    if parser_for?(service, method)
+      parser = Atheme::Support.constantize("Atheme::Parser::#{service}::#{method.capitalize}")
+
+      self.new(atheme_data).extend(parser)
+    else
       self.new(atheme_data)
     end
   end
@@ -27,5 +27,13 @@ class Atheme::Service
     self.create_service_object(method, service, Atheme.call('atheme.command',
       Atheme.user.cookie, Atheme.user.username, Atheme.user.ip,
       service, method, *args))
+  end
+
+  def self.parser_for?(service, command)
+    if Atheme::PARSERS.include?(service)
+      Atheme::PARSERS[service].include?(command.to_s)
+    else
+      false
+    end
   end
 end
