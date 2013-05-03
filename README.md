@@ -51,7 +51,7 @@ Any command can be used that the user has access to use.
 
 Command format: `Atheme::ServiceName.command 'param', 'param', ...`
 
-To see supported services [go here](https://github.com/zaphyous/atheme-ruby/blob/master/lib/atheme.rb#L21).
+To see supported services [go here](https://github.com/zaphyous/atheme-ruby/blob/master/lib/atheme.rb#L24).
 
 Each command will return an object of the `Atheme::Service` that is used. All will always have `#raw_services_output` that has the raw services output.
 
