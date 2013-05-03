@@ -51,18 +51,11 @@ Any command can be used that the user has access to use.
 
 Command format: `Atheme::ServiceName.command 'param', 'param', ...`
 
-To see supported services [go here](https://github.com/zaphyous/atheme-ruby/blob/feature/chanserv_methods/lib/atheme.rb#L21).
+To see supported services [go here](https://github.com/zaphyous/atheme-ruby/blob/master/lib/atheme.rb#L21).
 
-If you use a custom service you can create a class like so:
+Each command will return an object of the `Atheme::Service` that is used. All will always have `#raw_services_output` that has the raw services output.
 
-```ruby
-class Atheme::ServiceName < Atheme::Service
-end
-```
-
-Each command will return an object of the `Atheme::Service` that is used. All will always have `#to_raw` that has the raw services output.
-
-Some commands will return an object with additional methods on them depending if a parser exists for that command. [Parsers can be seen here](https://github.com/zaphyous/atheme-ruby/tree/develop/lib/atheme/parsers)
+Some commands will return an object with additional methods on them depending if a parser exists for that command. [Parsers can be seen here](https://github.com/zaphyous/atheme-ruby/tree/master/lib/atheme/parsers)
 
 ## Testing
 
