@@ -1,6 +1,6 @@
 # Atheme Ruby
 
-[![Code Climate](https://codeclimate.com/github/zaphyous/atheme-ruby.png)](https://codeclimate.com/github/zaphyous/atheme-ruby) [![Dependency Status](https://gemnasium.com/zaphyous/atheme-ruby.png)](https://gemnasium.com/zaphyous/atheme-ruby)
+[![Gem Version](https://badge.fury.io/rb/atheme.png)](http://badge.fury.io/rb/atheme) [![Code Climate](https://codeclimate.com/github/zaphyous/atheme-ruby.png)](https://codeclimate.com/github/zaphyous/atheme-ruby) [![Dependency Status](https://gemnasium.com/zaphyous/atheme-ruby.png)](https://gemnasium.com/zaphyous/atheme-ruby)
 
 A ruby way to access the [Atheme IRC Services](http://www.atheme.net) XMLRPC interface.
 
