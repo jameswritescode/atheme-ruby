@@ -36,6 +36,14 @@ module Atheme
     server.call(*args)
   end
 
+  def self.command(*args)
+    server.call('atheme.command', *args)
+  end
+
+  def self.privset(*args)
+    server.call('atheme.privset', *args)
+  end
+
   def self.set_user(cookie, username, ip)
     self.user = Atheme::ObjectifiedHash.new({ cookie: cookie, username: username, ip: ip })
   end
